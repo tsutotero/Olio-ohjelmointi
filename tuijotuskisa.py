@@ -11,7 +11,7 @@ class Peikko:
     :type rohkeus: int
     :ivar katseen_voima: peikon katseen voimakkuus, arvotaan
     :type katseen_voima: int
-
+    
     Julkiset metodit
         arvo_hurraus()
     """
