@@ -58,6 +58,34 @@ class Peikko:
 
 
 ### Kirjoita luokka Sankari tähän.
+class Sankari:
+    """Luokka, joka kuvaa Sankarin.
+
+    :ivar nimi: sankarin nimi, kysytään käyttäjältä
+    :type nimi: str
+    :ivar rohkeus: sankarin rohkeus, arvotaan
+    :type rohkeus: int
+    :ivar katseen_voima: sankarin katseen voimakkuus, arvotaan
+    :type katseen_voima: int
+    
+    Julkiset metodit
+        arvo_hurraus()
+    """
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.rohkeus = random.randint(4, 8)
+        self.katseen_voima = random.randint(2, 4)
+
+    def arvo_hurraus(self):
+        """
+        Palauttaa satunnaisen hurraushuudahduksen.
+
+        :return: hurraava huudahdus
+        :rtype: str
+        """
+        HURRAUKSET = ["Jes!", "Let's Go1", "Hurraa!", "Jeee!", "Jippii!"]
+        return random.choice(HURRAUKSET)
 
 
 def hurraa(olio):
@@ -127,39 +155,6 @@ def taistele(vasen, oikea):
         return vasen
     else:
         return oikea
-
-
-class Sankari:
-    """Luokka, joka kuvaa Sankarin.
-
-    :ivar nimi: sankarin nimi, kysytään käyttäjältä
-    :type nimi: str
-    :ivar rohkeus: sankarin rohkeus, arvotaan
-    :type rohkeus: int
-    :ivar katseen_voima: sankarin katseen voimakkuus, arvotaan
-    :type katseen_voima: int
-    
-    Julkiset metodit
-        arvo_hurraus()
-    """
-    
-    
-    def __init__(self, nimi):
-        self.nimi = nimi
-        self.rohkeus = random.randint(4, 8)
-        self.katseen_voima = random.randint(2, 4)
-
-    
-
-    def arvo_hurraus(self):
-        """
-        Palauttaa satunnaisen hurraushuudahduksen.
-
-        :return: hurraava huudahdus
-        :rtype: str
-        """
-        HURRAUKSET = ["Jes!", "Let's Go1", "Hurraa!", "Jeee!", "Jippii!"]
-        return random.choice(HURRAUKSET)
 
         
 sankari = Sankari(input("Mikä on sankarimme nimi? "))
